@@ -53,7 +53,7 @@ data "vsphere_virtual_machine" "template" {
 resource "vsphere_virtual_machine" "vm_web" {
   count = var.web_tier_count
   name             = "${var.aci_tenant_name}_terraform_web_${count.index}"
-//  resource_pool_id = data.vsphere_resource_pool.pool.id
+  resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   depends_on = [aci_application_epg.WEB_EPG]
 
@@ -97,7 +97,7 @@ resource "vsphere_virtual_machine" "vm_web" {
 resource "vsphere_virtual_machine" "vm_app" {
   count = var.app_tier_count
   name             = "${var.aci_tenant_name}_terraform_app_${count.index}"
-//  resource_pool_id = data.vsphere_resource_pool.pool.id
+  resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   depends_on = [aci_application_epg.APP_EPG]
 
@@ -141,7 +141,7 @@ resource "vsphere_virtual_machine" "vm_app" {
 resource "vsphere_virtual_machine" "vm_db" {
   count = var.db_tier_count
   name             = "${var.aci_tenant_name}_terraform_db_${count.index}"
-//  resource_pool_id = data.vsphere_resource_pool.pool.id
+  resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   depends_on = [aci_application_epg.DB_EPG]
 
