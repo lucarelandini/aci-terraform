@@ -16,11 +16,11 @@ data "vsphere_resource_pool" "pool" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-// Let's wait 30 second for the EPG and Portgroups to be created
+// Let's wait 45 second for the EPG and Portgroups to be created
 
 resource "time_sleep" "wait_30_seconds" {
   depends_on = [aci_application_epg.WEB_EPG,aci_application_epg.APP_EPG,aci_application_epg.DB_EPG]
-  create_duration = "31s"
+  create_duration = "45s"
 }
 
 //we concatenate the tenant, app profile and epg to get the portgroup name
