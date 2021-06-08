@@ -4,9 +4,9 @@ resource "aci_application_profile" "test-app" {
   description = "This app profile is created by terraform"
 }
 
-resource "aci_application_epg" "WEB_cluster_EPG" {
+resource "aci_application_epg" "WEB_EPG" {
   application_profile_dn = aci_application_profile.test-app.id
-  name			 = "WEB_EPG"
+  name			 = "WEB_cluster_EPG"
   relation_fv_rs_bd = aci_bridge_domain.web_bd.id
 }
 
