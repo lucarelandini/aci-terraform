@@ -7,7 +7,7 @@ terraform {
     }
     aci = {
       source = "CiscoDevNet/aci"
-      //version = ">= 0.13"
+      version = "0.7.0"
     }
   
   }
