@@ -50,7 +50,7 @@ variable "vsphere_vm_name" {
 
 variable "vsphere_resource_pool" {
   type = string
-  description = "the name of the resourcepool for examples: Cluster1/Resources " 
+  description = "the name of the resourcepool for examples: Cluster1/Resources "
 }
 
 variable "vsphere_vm_portgroup" {
@@ -106,4 +106,20 @@ variable "app_tier_count" {
 variable "db_tier_count" {
   description = "how many VM are deployed in Web Tier"
   default = 0
+}
+
+variable "region" {
+  description = "The region to create resources."
+  default     = "eu-central-1"
+}
+
+variable "instance_type" {
+  description = "Instance type"
+  default     = "t2.micro"
+}
+
+variable "ami" {
+  description = "ami type for EC2 instance"
+  #default     = "ami-009b16df9fcaac611"
+  default     = "ami-05f7491af5eef733a"
 }
