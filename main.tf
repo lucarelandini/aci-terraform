@@ -9,9 +9,21 @@ terraform {
       source = "CiscoDevNet/aci"
       version = "0.7.0"
     }
-  
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.27"
+    }
   }
 }
+
+provider "aws" {
+  region                  = var.region
+}
+
+provider "random" {}
+
+resource "random_pet" "name" {}
+
 
 provider "vsphere" {
   user           = var.vsphere_user
@@ -30,5 +42,3 @@ provider "aci" {
     url      = var.aci_url
     insecure = true
 }
-
-
