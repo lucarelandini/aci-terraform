@@ -79,7 +79,7 @@ resource "aws_instance" "backend_server" {
 
   tags = {
     Name      = random_pet.name.id
-    owner     = "lbolli@hashicorp.com"
+    owner     = "lrelandi@cisco.com"
     ttl       = 48
     se-region = "emea-se"
     purpose   = "test and demo policy tags enforcement"
